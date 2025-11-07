@@ -1,0 +1,20 @@
+site_name: Job Platform Documentation
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - content.code.annotate
+    - toc.integrate
+    - navigation.tabs
+  palette:
+    - scheme: default
+      primary: blue
+      accent: indigo
+
+nav:
+  - Home: index.md
+  - Functional Documentation: functional_documentation.md
+  - Use Case Documentation: usecase_documentation.md
+
+plugins:
+  - mermaid2
