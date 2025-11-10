@@ -6,6 +6,16 @@ This repository contains the **documentation site** for the **Job Platform Proje
 
 ## Setup Instructions
 
+### Clone the Repository
+```bash
+git clone https://github.com/nakshatra-droid/job_platform_docs.git
+```
+
+### Navigate into the Project Folder
+```bash
+cd job_platform_docs
+```
+
 ### Create and Activate Virtual Environment
 
 #### On Windows:
