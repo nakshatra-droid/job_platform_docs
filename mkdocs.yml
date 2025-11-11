@@ -15,7 +15,7 @@ nav:
   - Home: index.md
   - Functional Documentation: functional_documentation.md
   - Use Case Documentation: usecase_documentation.md
-  - Technical Design:
+  - Technical Documentation:
       - Technical Stack: technical_stack.md
       - Schema Design: schema_design.md
       - Cloud Architecture: cloud_architecture.md

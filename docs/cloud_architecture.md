@@ -21,10 +21,10 @@ Hosts the React + Tailwind frontend, providing global CDN distribution, HTTPS, a
 Hosts the Node.js + Express backend application, handling API requests, business logic, and file uploads. EC2 runs inside the VPC for secure communication with other AWS services.
 
 **Amazon RDS (Relational Database Service):**  
-Manages the PostgreSQL database that stores structured data such as user accounts, job listings, and applications. Provides high availability, automated backups, and monitoring.
+Manages the PostgreSQL database that stores structured data such as user accounts, job listings, and applications.
 
 **Amazon S3 (Simple Storage Service):**  
-Used for storing static assets such as resumes, profile pictures, and company logos. Access is controlled using IAM roles for secure uploads.
+Used for storing static assets such as resumes, profile pictures, and company logos.
 
 **GitHub Actions (CI/CD):**  
 Automates build, test, and deployment pipelines for both frontend and backend. Updates are pushed directly to Netlify and EC2 environments.
@@ -33,5 +33,4 @@ Automates build, test, and deployment pipelines for both frontend and backend. U
 
 ## Summary
 
-This architecture ensures that the Job Platform runs in a secure, scalable, and automated environment.  
-By combining **Netlify**, **AWS EC2**, **RDS**, **S3**, the system maintains strong performance, data integrity, and security while supporting continuous integration through **GitHub Actions**.
+This architecture ensures that the Job Platform runs in a secure, scalable, and automated environment. By combining **Netlify**, **AWS EC2**, **RDS**, **S3**, the system maintains strong performance, data integrity, and security while supporting continuous integration through **GitHub Actions**.

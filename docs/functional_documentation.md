@@ -57,21 +57,7 @@ The **Job Platform** aims to provide a **centralized digital solution** that sim
 
 ## System Flow Overview
 
-```mermaid
-flowchart TD
-A[Job Seeker Login] --> B[Search Jobs]
-B --> C[Apply for Job]
-C --> D[Application Saved to DB & Resume to S3]
-A --> E[View My Applications]
-A --> F[Update Profile]
-
-
-G[Employer Login] --> H[Create Job]
-H --> I[Job Visible to Seekers]
-G --> J[View Applications]
-G --> K[Update Profile]
-G --> L[View Jobs]
-```
+![aws](../assets/sfd.png)
 
 ---
 

@@ -8,85 +8,119 @@ This section illustrates the **database schema** used in the **Job Platform** pr
 
 Below is the ER diagram representing the structure and relationships between the tables:
 
-```mermaid
+![aws](../assets/schema.png)
+
 ---
-config:
-  layout: dagre
+
+## Table Details
+
+Below are detailed descriptions of each table and their respective fields.
+
 ---
-erDiagram
 
-    ROLES {
-        SERIAL id PK
-        VARCHAR name
-    }
+### USERS
 
-    USER_ROLES {
-        SERIAL id PK ""
-        INT role_id FK ""
-        INT user_id FK ""
-        TIMESTAMPTZ created_at ""
-        TIMESTAMPTZ updated_at ""
-        TIMESTAMPTZ deleted_at ""
-    }
+| Field | Data Type | Description |
+|--------|------------|-------------|
+| **id** | SERIAL (PK) | Unique identifier for each user. |
+| **full_name** | VARCHAR | Full name of the user. |
+| **email** | VARCHAR | User’s email address (must be unique). |
+| **phone** | VARCHAR | User’s contact number. |
+| **password** | VARCHAR | Hashed password using bcrypt. |
+| **is_verified** | BOOLEAN | Indicates if the user's email is verified. |
+| **address** | TEXT | Physical address of the user. |
+| **resume_url** | TEXT | AWS S3 URL of the uploaded resume. |
 
-    USERS {
-        SERIAL id PK ""
-        VARCHAR full_name ""
-        VARCHAR email ""
-        VARCHAR phone ""
-        VARCHAR password ""
-        BOOLEAN is_verified ""
-        TEXT address ""
-        TEXT resume_url ""
-    }
+---
 
-    COMPANIES {
-        SERIAL id PK ""
-        VARCHAR name ""
-        TIMESTAMPTZ created_at ""
-        TIMESTAMPTZ updated_at ""
-        TIMESTAMPTZ deleted_at ""
-    }
+### ROLES
 
-    COMPANY_USER {
-        SERIAL id PK ""
-        INT company_id FK ""
-        INT user_id FK ""
-        TIMESTAMPTZ created_at ""
-        TIMESTAMPTZ updated_at ""
-        TIMESTAMPTZ deleted_at ""
-    }
+| Field | Data Type | Description |
+|--------|------------|-------------|
+| **id** | SERIAL (PK) | Unique identifier for the role. |
+| **name** | VARCHAR | Role name — e.g., `Job Seeker`, `Employer`, `Admin`. |
 
-    JOBS {
-        SERIAL id PK ""
-        INT company_id FK ""
-        INT created_by FK ""
-        VARCHAR title ""
-        TEXT job_description ""
-        VARCHAR salary ""
-        VARCHAR location ""
-        ENUM job_type ""
-        TIMESTAMPTZ created_at ""
-        TIMESTAMPTZ updated_at ""
-        TIMESTAMPTZ deleted_at ""
-    }
+---
 
-    APPLICATIONS {
-        SERIAL id PK ""
-        INT job_id FK ""
-        INT job_seeker_id FK ""
-        ENUM status ""
-        TIMESTAMPTZ created_at ""
-        TIMESTAMPTZ updated_at ""
-        TIMESTAMPTZ deleted_at ""
-    }
+### USER_ROLES
 
-    USERS ||--o{ COMPANY_USER : "is linked to company"
-    COMPANIES ||--o{ COMPANY_USER : "has company users"
-    COMPANIES ||--o{ JOBS : "owns job listings"
-    USERS ||--o{ JOBS : "creates job listings"
-    JOBS ||--o{ APPLICATIONS : "receives applications"
-    USER_ROLES }o--|| USERS : ""
-    ROLES ||--o{ USER_ROLES : ""
+| Field | Data Type | Description |
+|--------|------------|-------------|
+| **id** | SERIAL (PK) | Unique identifier for each record. |
+| **role_id** | INT (FK) | References `ROLES.id`. |
+| **user_id** | INT (FK) | References `USERS.id`. |
+| **created_at** | TIMESTAMPTZ | Record creation timestamp. |
+| **updated_at** | TIMESTAMPTZ | Record update timestamp. |
+| **deleted_at** | TIMESTAMPTZ | Soft delete marker. |
 
-```
+---
+
+### COMPANIES
+
+| Field | Data Type | Description |
+|--------|------------|-------------|
+| **id** | SERIAL (PK) | Unique identifier for each company. |
+| **name** | VARCHAR | Company name. |
+| **created_at** | TIMESTAMPTZ | Record creation timestamp. |
+| **updated_at** | TIMESTAMPTZ | Record update timestamp. |
+| **deleted_at** | TIMESTAMPTZ | Soft delete marker. |
+
+---
+
+### COMPANY_USER
+
+| Field | Data Type | Description |
+|--------|------------|-------------|
+| **id** | SERIAL (PK) | Unique identifier for each record. |
+| **company_id** | INT (FK) | References `COMPANIES.id`. |
+| **user_id** | INT (FK) | References `USERS.id`. |
+| **created_at** | TIMESTAMPTZ | Record creation timestamp. |
+| **updated_at** | TIMESTAMPTZ | Record update timestamp. |
+| **deleted_at** | TIMESTAMPTZ | Soft delete marker. |
+
+---
+
+### JOBS
+
+| Field | Data Type | Description |
+|--------|------------|-------------|
+| **id** | SERIAL (PK) | Unique identifier for each job posting. |
+| **company_id** | INT (FK) | References `COMPANIES.id`. |
+| **created_by** | INT (FK) | References `USERS.id` (Employer who created the job). |
+| **title** | VARCHAR | Job title. |
+| **job_description** | TEXT | Detailed job description. |
+| **salary** | VARCHAR | Salary or compensation details. |
+| **location** | VARCHAR | Job location. |
+| **job_type** | ENUM | Type of job (e.g., Full-Time, Part-Time, Internship). |
+| **created_at** | TIMESTAMPTZ | Record creation timestamp. |
+| **updated_at** | TIMESTAMPTZ | Record update timestamp. |
+| **deleted_at** | TIMESTAMPTZ | Soft delete marker. |
+
+---
+
+### APPLICATIONS
+
+| Field | Data Type | Description |
+|--------|------------|-------------|
+| **id** | SERIAL (PK) | Unique identifier for each application. |
+| **job_id** | INT (FK) | References `JOBS.id`. |
+| **job_seeker_id** | INT (FK) | References `USERS.id`. |
+| **status** | ENUM | Application status (`Pending`, `Accepted`, `Rejected`). |
+| **created_at** | TIMESTAMPTZ | Record creation timestamp. |
+| **updated_at** | TIMESTAMPTZ | Record update timestamp. |
+| **deleted_at** | TIMESTAMPTZ | Soft delete marker. |
+
+---
+
+## Indexing Strategy
+
+To enhance query performance for common operations like login, job search, and application tracking, selective single and composite indexes are implemented on frequently accessed columns.
+
+| Table Name | Indexed Column(s) | Reason for Indexing | Use Case |
+|-------------|------------------|---------------------|-----------|
+| **users** | `email` | Ensures unique user login and faster authentication lookups. | Validate login credentials instantly using email. |
+| **roles** | `name` | Speeds up role identification during authorization checks. | Quickly verify role type (Job Seeker, Employer, Admin). |
+| **user_roles** | (`user_id`, `role_id`) *(Composite)* | Optimizes role-based permission checks. | Retrieve roles assigned to a specific user. |
+| **companies** | `name` | Allows faster company searches and suggestions. | Find a company while posting or managing jobs. |
+| **jobs** | (`location`, `job_type`) *(Composite)* | Improves search and filtering performance for job listings. | Display jobs filtered by type or location. |
+| **applications** | (`job_id`, `job_seeker_id`) *(Composite)* | Prevents duplicate applications and speeds up lookups. | Check if a job seeker has already applied to a job. |

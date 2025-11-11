@@ -111,29 +111,4 @@ Below are detailed use cases describing interactions between the user and the sy
 
 ## 4. Use Case Diagram
 
-```mermaid
-
-graph TD
-    JobSeeker([Job Seeker])
-    Employer([Employer])
-
-    JobSeeker -->|Registers| Register
-    JobSeeker -->|Logs in| Login
-    JobSeeker -->|Searches for| SearchJobs
-    JobSeeker -->|Applies via| ApplyJob
-    JobSeeker -->|Updates| UpdateProfile
-    JobSeeker -->|Views| ViewApplications
-    JobSeeker -->|Ends session| LogoutSeeker
-
-    Employer -->|Registers| RegisterEmp
-    Employer -->|Logs in| LoginEmp
-    Employer -->|Creates| CreateJob
-    Employer -->|Updates| UpdateJob
-    Employer -->|Deletes| DeleteJob
-    Employer -->|Views| ViewApplicants
-    Employer -->|Updates| UpdateEmployerProfile
-    Employer -->|Ends session| LogoutEmp
-
-    classDef actor fill:#f5f5f5,stroke:#333,stroke-width:1px;
-    class JobSeeker,Employer actor;
-```
+![aws](../assets/ucd.png)
