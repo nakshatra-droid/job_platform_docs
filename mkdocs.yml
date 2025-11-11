@@ -15,6 +15,12 @@ nav:
   - Home: index.md
   - Functional Documentation: functional_documentation.md
   - Use Case Documentation: usecase_documentation.md
+  - Technical Design:
+      - Technical Stack: technical_stack.md
+      - Schema Design: schema_design.md
+      - Cloud Architecture: cloud_architecture.md
+      - Data Flow Diagram: data_flow.md
+      - Authentication & Authorization Flow: auth_flow.md
 
 plugins:
   - mermaid2
