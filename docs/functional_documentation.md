@@ -71,7 +71,7 @@ The **Job Platform** aims to provide a **centralized digital solution** that sim
 | **Authentication** | JWT (JSON Web Token), bcrypt | Secure login system with encrypted passwords and token-based access management. |
 | **Cloud Storage** | AWS S3 | Storing user resumes, profile images, and company logos safely and scalably. |
 | **Testing** | Jest, Postman | Unit and API testing to ensure reliability and prevent regressions. |
-| **Deployment & CI/CD** | GitHub Actions, Vercel / Railway / AWS EC2 | Automating build, test, and deploy pipelines to ensure continuous integration and delivery. |
+| **Deployment & CI/CD** | GitHub Actions, AWS EC2 | Automating build, test, and deploy pipelines to ensure continuous integration and delivery. |
 | **Documentation** | MkDocs Material | Generating structured, visually consistent, and easy-to-navigate documentation. |
 
 ---
