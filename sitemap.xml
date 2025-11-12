@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://nakshatra-droid.github.io/job_platform_docs/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://nakshatra-droid.github.io/job_platform_docs/auth_flow/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://nakshatra-droid.github.io/job_platform_docs/cloud_architecture/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://nakshatra-droid.github.io/job_platform_docs/data_flow/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://nakshatra-droid.github.io/job_platform_docs/functional_documentation/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://nakshatra-droid.github.io/job_platform_docs/schema_design/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://nakshatra-droid.github.io/job_platform_docs/technical_stack/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+    <url>
+         <loc>https://nakshatra-droid.github.io/job_platform_docs/usecase_documentation/</loc>
+         <lastmod>2025-11-12</lastmod>
+    </url>
+</urlset>
