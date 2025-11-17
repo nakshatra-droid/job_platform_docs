@@ -670,17 +670,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#not-included" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Not Included
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -864,7 +853,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cicd" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -872,28 +866,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="CI/CD">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#runs-automatically-on" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Runs automatically on:
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -965,27 +937,20 @@
 <h3 id="included">Included</h3>
 <h3 id="frontend-react-tailwind">Frontend (React + Tailwind)</h3>
 <ul>
-<li>UI Components (Header, HeroSection, Cards, Modals)</li>
-<li>Pages (Landing, Login, Register, Dashboard)</li>
-<li>Context (AuthContext)</li>
-<li>API Layer (Axios services)</li>
+<li>UI Components</li>
+<li>Pages</li>
+<li>Context </li>
+<li>API Layer</li>
 <li>Custom hooks</li>
-<li>Utility functions (validators, formatters)</li>
 </ul>
 <h3 id="backend-node-express-sequelize">Backend (Node + Express + Sequelize)</h3>
 <ul>
-<li>Controllers (user, job, application)</li>
-<li>Services (business logic)</li>
-<li>Middlewares (auth, role)</li>
-<li>Routes (<code>/auth</code>, <code>/jobs</code>, <code>/applications</code>)</li>
-<li>Utility functions (<code>ApiError</code>, <code>ApiResponse</code>, <code>asyncHandler</code>)</li>
-<li>Sequelize model interactions (mocked)</li>
-</ul>
-<h3 id="not-included">Not Included</h3>
-<ul>
-<li>AWS S3 uploads (mocked)</li>
-<li>Full E2E flow</li>
-<li>UI/UX design testing</li>
+<li>Controllers </li>
+<li>Services </li>
+<li>Middlewares </li>
+<li>Routes</li>
+<li>Utility functions</li>
+<li>Sequelize model interactions</li>
 </ul>
 <hr />
 <h2 id="4-test-approach">4. Test Approach</h2>
@@ -1007,7 +972,7 @@
 <li>API endpoint responses  </li>
 <li>Positive &amp; negative route testing  </li>
 <li>Authentication/authorization  </li>
-<li>Business logic in services  </li>
+<li>Business logic </li>
 <li>Database operations (mocked)  </li>
 <li>Error handling &amp; utilities  </li>
 </ul>
@@ -1288,12 +1253,12 @@
 <td>DB mocking</td>
 </tr>
 <tr>
-<td>ESLint + Prettier</td>
+<td>ESLint</td>
 <td>Code quality</td>
 </tr>
 <tr>
 <td>GitHub Actions</td>
-<td><strong>Mandatory</strong> CI/CD test automation</td>
+<td>CI/CD test automation</td>
 </tr>
 <tr>
 <td>Axios</td>
@@ -1311,12 +1276,11 @@ npm run test:coverage
 <pre><code>npm test
 npm run test:coverage
 </code></pre>
-<h3 id="cicd">CI/CD</h3>
-<h4 id="runs-automatically-on">Runs automatically on:</h4>
+<h2 id="cicd">CI/CD</h2>
+<p>The CI/CD pipeline will run automatically on:</p>
 <ul>
-<li>Every push  </li>
-<li>Every pull request  </li>
-<li>Before merging to <code>develop</code> or <code>main</code></li>
+<li>Every push to the <code>main</code> branch  </li>
+<li>Every pull request targeting the <code>main</code> branch  </li>
 </ul>
 <hr />
 <h2 id="11-summary">11. Summary</h2>
@@ -1324,9 +1288,8 @@ npm run test:coverage
 <ul>
 <li>Positive + Negative tests  </li>
 <li>Mocked API &amp; database tests  </li>
-<li>Mandatory CI/CD automation  </li>
+<li>CI/CD automation  </li>
 </ul>
-<p>This plan will guide testing throughout the entire development lifecycle.</p>
 
 
 
