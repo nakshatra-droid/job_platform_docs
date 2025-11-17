@@ -20,6 +20,7 @@ The main goals of unit testing are:
 - Maintain a **stable, scalable, and clean codebase**.
 - Prevent regressions from new updates.
 - Support **mandatory CI/CD testing** for all commits and PRs.
+- Achieve a minimum **80%+ test coverage** across the code.
 
 ---
 
@@ -50,6 +51,25 @@ The main goals of unit testing are:
 - **Jest** – main test runner (frontend + backend)
 - **Supertest** – backend API route testing
 
+### Tools Versioning
+To maintain consistency across the team:
+
+- **Jest:** 29.x  
+- **React Testing Library:** 14.x  
+- **Supertest:** 6.x  
+- **Node.js:** LTS  
+- **Vite:** Latest stable  
+
+### Environment Setup Notes
+- Backend DB operations will be mocked (no real DB connection).  
+- A **.env.test** file will contain safe values such as:  
+  ```
+  JWT_SECRET=testsecret
+  DB_URL=test-db-url
+  ```
+- Axios requests in frontend tests will use mocked functions.  
+- Sequelize models will be mocked in backend tests.
+
 ### Frontend Focus Areas
 - Component rendering & events  
 - Form validation (positive & negative)  
@@ -63,7 +83,32 @@ The main goals of unit testing are:
 - Authentication/authorization  
 - Business logic 
 - Database operations (mocked)  
-- Error handling & utilities  
+- Error handling & utilities
+- Negative cases such as:  
+  - Invalid inputs  
+  - Missing fields  
+  - Unauthorized access  
+  - Database failure scenarios   
+
+### Test Data Strategy
+Mock data will be used for all unit tests.  
+Examples:
+
+**User payload:**
+```json
+{
+  "email": "test@example.com",
+  "password": "Password@123"
+}
+```
+
+**Mock API responses:**
+```json
+{
+  "status": "success",
+  "data": []
+}
+``` 
 
 ### Test Folder Structure
 ```
@@ -180,12 +225,32 @@ The CI/CD pipeline will run automatically on:
 - Every push to the `main` branch  
 - Every pull request targeting the `main` branch  
 
+## Reporting
+- Test results displayed in terminal  
+- Coverage reports generated using Jest  
+- CI/CD logs available in GitHub Actions  
+
 ---
 
-## 11. Summary
+## 11. Acceptance Criteria
+For unit testing to be considered complete:
+
+- Minimum **80%+ coverage** achieved  
+- All unit tests pass with **no failures**  
+- Negative test cases included  
+- All DB/external services mocked  
+- CI/CD pipeline must pass  
+- No console errors or uncaught exceptions in tests  
+
+---
+
+## 12. Summary
 This Unit Test Plan ensures the **Joblelo Job Platform** remains stable, accurate, and reliable by enforcing strict testing standards, including:
 
 - Positive + Negative tests  
 - Mocked API & database tests  
+- Coverage targets  
+- Test data strategy  
 - CI/CD automation  
+- Clear acceptance criteria  
 
