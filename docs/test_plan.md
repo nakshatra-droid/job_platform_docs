@@ -28,25 +28,19 @@ The main goals of unit testing are:
 ### Included
 
 ### Frontend (React + Tailwind)
-- UI Components (Header, HeroSection, Cards, Modals)
-- Pages (Landing, Login, Register, Dashboard)
-- Context (AuthContext)
-- API Layer (Axios services)
+- UI Components
+- Pages
+- Context 
+- API Layer
 - Custom hooks
-- Utility functions (validators, formatters)
 
 ### Backend (Node + Express + Sequelize)
-- Controllers (user, job, application)
-- Services (business logic)
-- Middlewares (auth, role)
-- Routes (`/auth`, `/jobs`, `/applications`)
-- Utility functions (`ApiError`, `ApiResponse`, `asyncHandler`)
-- Sequelize model interactions (mocked)
-
-### Not Included
-- AWS S3 uploads (mocked)
-- Full E2E flow
-- UI/UX design testing
+- Controllers 
+- Services 
+- Middlewares 
+- Routes
+- Utility functions
+- Sequelize model interactions
 
 ---
 
@@ -67,7 +61,7 @@ The main goals of unit testing are:
 - API endpoint responses  
 - Positive & negative route testing  
 - Authentication/authorization  
-- Business logic in services  
+- Business logic 
 - Database operations (mocked)  
 - Error handling & utilities  
 
@@ -160,8 +154,8 @@ Mentors will verify tests during the final review.
 | React Testing Library | Component tests |
 | Supertest | API route testing |
 | Jest Mocks / Sequelize Mock | DB mocking |
-| ESLint + Prettier | Code quality |
-| GitHub Actions | **Mandatory** CI/CD test automation |
+| ESLint | Code quality |
+| GitHub Actions | CI/CD test automation |
 | Axios | Mockable API client |
 
 ---
@@ -180,11 +174,11 @@ npm test
 npm run test:coverage
 ```
 
-### CI/CD
-#### Runs automatically on:
-- Every push  
-- Every pull request  
-- Before merging to `develop` or `main`
+## CI/CD
+The CI/CD pipeline will run automatically on:
+
+- Every push to the `main` branch  
+- Every pull request targeting the `main` branch  
 
 ---
 
@@ -193,6 +187,5 @@ This Unit Test Plan ensures the **Joblelo Job Platform** remains stable, accurat
 
 - Positive + Negative tests  
 - Mocked API & database tests  
-- Mandatory CI/CD automation  
+- CI/CD automation  
 
-This plan will guide testing throughout the entire development lifecycle.
