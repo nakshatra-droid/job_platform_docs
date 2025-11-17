@@ -699,6 +699,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tools-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools Versioning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-setup-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Setup Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#frontend-focus-areas" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -714,6 +736,17 @@
     <span class="md-ellipsis">
       
         Backend Focus Areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-data-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Data Strategy
       
     </span>
   </a>
@@ -870,10 +903,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#11-summary" class="md-nav__link">
+  <a href="#reporting" class="md-nav__link">
     <span class="md-ellipsis">
       
-        11. Summary
+        Reporting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Acceptance Criteria
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Summary
       
     </span>
   </a>
@@ -931,6 +986,7 @@
 <li>Maintain a <strong>stable, scalable, and clean codebase</strong>.</li>
 <li>Prevent regressions from new updates.</li>
 <li>Support <strong>mandatory CI/CD testing</strong> for all commits and PRs.</li>
+<li>Achieve a minimum <strong>80%+ test coverage</strong> across the code.</li>
 </ul>
 <hr />
 <h2 id="3-scope">3. Scope</h2>
@@ -959,6 +1015,24 @@
 <li><strong>Jest</strong> – main test runner (frontend + backend)</li>
 <li><strong>Supertest</strong> – backend API route testing</li>
 </ul>
+<h3 id="tools-versioning">Tools Versioning</h3>
+<p>To maintain consistency across the team:</p>
+<ul>
+<li><strong>Jest:</strong> 29.x  </li>
+<li><strong>React Testing Library:</strong> 14.x  </li>
+<li><strong>Supertest:</strong> 6.x  </li>
+<li><strong>Node.js:</strong> LTS  </li>
+<li><strong>Vite:</strong> Latest stable  </li>
+</ul>
+<h3 id="environment-setup-notes">Environment Setup Notes</h3>
+<ul>
+<li>Backend DB operations will be mocked (no real DB connection).  </li>
+<li>A <strong>.env.test</strong> file will contain safe values such as:<br />
+<code>JWT_SECRET=testsecret
+  DB_URL=test-db-url</code></li>
+<li>Axios requests in frontend tests will use mocked functions.  </li>
+<li>Sequelize models will be mocked in backend tests.</li>
+</ul>
 <h3 id="frontend-focus-areas">Frontend Focus Areas</h3>
 <ul>
 <li>Component rendering &amp; events  </li>
@@ -974,8 +1048,28 @@
 <li>Authentication/authorization  </li>
 <li>Business logic </li>
 <li>Database operations (mocked)  </li>
-<li>Error handling &amp; utilities  </li>
+<li>Error handling &amp; utilities</li>
+<li>Negative cases such as:  </li>
+<li>Invalid inputs  </li>
+<li>Missing fields  </li>
+<li>Unauthorized access  </li>
+<li>Database failure scenarios   </li>
 </ul>
+<h3 id="test-data-strategy">Test Data Strategy</h3>
+<p>Mock data will be used for all unit tests.<br />
+Examples:</p>
+<p><strong>User payload:</strong></p>
+<pre><code class="language-json">{
+  &quot;email&quot;: &quot;test@example.com&quot;,
+  &quot;password&quot;: &quot;Password@123&quot;
+}
+</code></pre>
+<p><strong>Mock API responses:</strong></p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;success&quot;,
+  &quot;data&quot;: []
+}
+</code></pre>
 <h3 id="test-folder-structure">Test Folder Structure</h3>
 <pre><code>    frontend/src/tests/
     backend/src/tests/
@@ -1282,13 +1376,33 @@ npm run test:coverage
 <li>Every push to the <code>main</code> branch  </li>
 <li>Every pull request targeting the <code>main</code> branch  </li>
 </ul>
+<h2 id="reporting">Reporting</h2>
+<ul>
+<li>Test results displayed in terminal  </li>
+<li>Coverage reports generated using Jest  </li>
+<li>CI/CD logs available in GitHub Actions  </li>
+</ul>
 <hr />
-<h2 id="11-summary">11. Summary</h2>
+<h2 id="11-acceptance-criteria">11. Acceptance Criteria</h2>
+<p>For unit testing to be considered complete:</p>
+<ul>
+<li>Minimum <strong>80%+ coverage</strong> achieved  </li>
+<li>All unit tests pass with <strong>no failures</strong>  </li>
+<li>Negative test cases included  </li>
+<li>All DB/external services mocked  </li>
+<li>CI/CD pipeline must pass  </li>
+<li>No console errors or uncaught exceptions in tests  </li>
+</ul>
+<hr />
+<h2 id="12-summary">12. Summary</h2>
 <p>This Unit Test Plan ensures the <strong>Joblelo Job Platform</strong> remains stable, accurate, and reliable by enforcing strict testing standards, including:</p>
 <ul>
 <li>Positive + Negative tests  </li>
 <li>Mocked API &amp; database tests  </li>
+<li>Coverage targets  </li>
+<li>Test data strategy  </li>
 <li>CI/CD automation  </li>
+<li>Clear acceptance criteria  </li>
 </ul>
 
 
