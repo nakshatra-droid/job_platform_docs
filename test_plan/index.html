@@ -1,0 +1,1386 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nakshatra-droid.github.io/job_platform_docs/test_plan/">
+      
+      
+        <link rel="prev" href="../auth_flow/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Unit Test Plan - Job Platform Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unit-test-plan-joblelo-job-platform" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Job Platform Documentation" class="md-header__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Job Platform Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unit Test Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../functional_documentation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Functional Documentation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../usecase_documentation/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Use Case Documentation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../technical_stack/" class="md-tabs__link">
+          
+  
+  
+  Technical Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Job Platform Documentation" class="md-nav__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Job Platform Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../functional_documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Functional Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../usecase_documentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Case Documentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../technical_stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schema_design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schema Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cloud_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Flow Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../auth_flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authentication & Authorization Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit Test Plan
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unit Test Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Objectives
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Scope
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Scope">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#included" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Included
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-react-tailwind" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend (React + Tailwind)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-node-express-sequelize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend (Node + Express + Sequelize)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-included" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not Included
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-test-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Test Approach
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Test Approach">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-focus-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Focus Areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-focus-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend Focus Areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-folder-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Folder Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-test-cases-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Test Cases (Examples)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Test Cases (Examples)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Test Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend Test Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-test-schedule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Test Schedule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-responsibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Responsibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-risks-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Risks &amp; Mitigation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Tools
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Commands
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#runs-automatically-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runs automatically on:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="unit-test-plan-joblelo-job-platform">Unit Test Plan – Joblelo Job Platform</h1>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>This document provides the <strong>Unit Testing Plan</strong> for the <strong>Joblelo Job Platform</strong>, a job portal supporting two roles: <strong>Job Seekers</strong> and <strong>Recruiters</strong>.</p>
+<p>The project consists of:</p>
+<ul>
+<li><strong>Frontend:</strong> React (Vite) + Tailwind + Axios  </li>
+<li><strong>Backend:</strong> Node.js + Express + Sequelize + PostgreSQL  </li>
+</ul>
+<p>Unit testing ensures that every component, API route, and service behaves correctly before deployment and integration.</p>
+<hr />
+<h2 id="2-objectives">2. Objectives</h2>
+<p>The main goals of unit testing are:</p>
+<ul>
+<li>Verify correctness of <strong>every function, component, and service</strong>.</li>
+<li>Identify bugs early in the development process.</li>
+<li>Maintain a <strong>stable, scalable, and clean codebase</strong>.</li>
+<li>Prevent regressions from new updates.</li>
+<li>Support <strong>mandatory CI/CD testing</strong> for all commits and PRs.</li>
+</ul>
+<hr />
+<h2 id="3-scope">3. Scope</h2>
+<h3 id="included">Included</h3>
+<h3 id="frontend-react-tailwind">Frontend (React + Tailwind)</h3>
+<ul>
+<li>UI Components (Header, HeroSection, Cards, Modals)</li>
+<li>Pages (Landing, Login, Register, Dashboard)</li>
+<li>Context (AuthContext)</li>
+<li>API Layer (Axios services)</li>
+<li>Custom hooks</li>
+<li>Utility functions (validators, formatters)</li>
+</ul>
+<h3 id="backend-node-express-sequelize">Backend (Node + Express + Sequelize)</h3>
+<ul>
+<li>Controllers (user, job, application)</li>
+<li>Services (business logic)</li>
+<li>Middlewares (auth, role)</li>
+<li>Routes (<code>/auth</code>, <code>/jobs</code>, <code>/applications</code>)</li>
+<li>Utility functions (<code>ApiError</code>, <code>ApiResponse</code>, <code>asyncHandler</code>)</li>
+<li>Sequelize model interactions (mocked)</li>
+</ul>
+<h3 id="not-included">Not Included</h3>
+<ul>
+<li>AWS S3 uploads (mocked)</li>
+<li>Full E2E flow</li>
+<li>UI/UX design testing</li>
+</ul>
+<hr />
+<h2 id="4-test-approach">4. Test Approach</h2>
+<h3 id="frameworks">Frameworks</h3>
+<ul>
+<li><strong>Jest</strong> – main test runner (frontend + backend)</li>
+<li><strong>Supertest</strong> – backend API route testing</li>
+</ul>
+<h3 id="frontend-focus-areas">Frontend Focus Areas</h3>
+<ul>
+<li>Component rendering &amp; events  </li>
+<li>Form validation (positive &amp; negative)  </li>
+<li>API calls via mocked Axios  </li>
+<li>Navigation &amp; redirects  </li>
+<li>AuthContext behavior  </li>
+</ul>
+<h3 id="backend-focus-areas">Backend Focus Areas</h3>
+<ul>
+<li>API endpoint responses  </li>
+<li>Positive &amp; negative route testing  </li>
+<li>Authentication/authorization  </li>
+<li>Business logic in services  </li>
+<li>Database operations (mocked)  </li>
+<li>Error handling &amp; utilities  </li>
+</ul>
+<h3 id="test-folder-structure">Test Folder Structure</h3>
+<pre><code>    frontend/src/tests/
+    backend/src/tests/
+</code></pre>
+<hr />
+<h2 id="5-test-cases-examples">5. Test Cases (Examples)</h2>
+<h3 id="frontend-test-cases">Frontend Test Cases</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Test Case</th>
+<th>Type</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Renders logo and login button</td>
+<td>Positive</td>
+<td>Elements visible</td>
+</tr>
+<tr>
+<td>HeroSection</td>
+<td>Renders heading &amp; image</td>
+<td>Positive</td>
+<td>Correct UI output</td>
+</tr>
+<tr>
+<td>LoginPage</td>
+<td>Valid login</td>
+<td>Positive</td>
+<td>Navigate to dashboard</td>
+</tr>
+<tr>
+<td>LoginPage</td>
+<td>Incorrect credentials</td>
+<td>Negative</td>
+<td>Show error message</td>
+</tr>
+<tr>
+<td>RegisterPage</td>
+<td>Missing fields</td>
+<td>Negative</td>
+<td>Show validation error</td>
+</tr>
+<tr>
+<td>JobsPage</td>
+<td>Renders jobs from API</td>
+<td>Positive</td>
+<td>Display job cards</td>
+</tr>
+<tr>
+<td>JobsPage</td>
+<td>No jobs available</td>
+<td>Negative</td>
+<td>Show “No jobs found”</td>
+</tr>
+<tr>
+<td>AuthContext</td>
+<td>Logout</td>
+<td>Positive</td>
+<td>Clears auth state</td>
+</tr>
+<tr>
+<td>Axios Service</td>
+<td>GET /jobs</td>
+<td>Positive</td>
+<td>Returns mocked list</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="backend-test-cases">Backend Test Cases</h3>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Test Case</th>
+<th>Type</th>
+<th>Expected Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Health Route</td>
+<td>GET /health</td>
+<td>Positive</td>
+<td>200 + <code>{status: "ok"}</code></td>
+</tr>
+<tr>
+<td>AuthController</td>
+<td>Register user</td>
+<td>Positive</td>
+<td>201 success</td>
+</tr>
+<tr>
+<td>AuthController</td>
+<td>Duplicate email</td>
+<td>Negative</td>
+<td>409 conflict</td>
+</tr>
+<tr>
+<td>AuthController</td>
+<td>Login valid email/password</td>
+<td>Positive</td>
+<td>Cookie + 200</td>
+</tr>
+<tr>
+<td>AuthController</td>
+<td>Wrong password</td>
+<td>Negative</td>
+<td>401 unauthorized</td>
+</tr>
+<tr>
+<td>JobController</td>
+<td>Recruiter creates job</td>
+<td>Positive</td>
+<td>201 created</td>
+</tr>
+<tr>
+<td>JobController</td>
+<td>Missing token</td>
+<td>Negative</td>
+<td>401 unauthorized</td>
+</tr>
+<tr>
+<td>ApplicationController</td>
+<td>Apply for job</td>
+<td>Positive</td>
+<td>201 success</td>
+</tr>
+<tr>
+<td>ApplicationController</td>
+<td>Apply twice</td>
+<td>Negative</td>
+<td>400 error</td>
+</tr>
+<tr>
+<td>Auth Middleware</td>
+<td>Valid token</td>
+<td>Positive</td>
+<td>Calls <code>next()</code></td>
+</tr>
+<tr>
+<td>Auth Middleware</td>
+<td>Invalid token</td>
+<td>Negative</td>
+<td>401</td>
+</tr>
+<tr>
+<td>Utils</td>
+<td>validateEmail()</td>
+<td>Positive</td>
+<td>returns boolean</td>
+</tr>
+<tr>
+<td>Utils</td>
+<td>validateEmail("abc")</td>
+<td>Negative</td>
+<td>returns false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-test-schedule">6. Test Schedule</h2>
+<table>
+<thead>
+<tr>
+<th>Activity</th>
+<th>Responsibility</th>
+<th>When</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Write unit tests</td>
+<td>Myself</td>
+<td>During each feature</td>
+</tr>
+<tr>
+<td>Run tests locally</td>
+<td>Myself</td>
+<td>Before every commit &amp; PR</td>
+</tr>
+<tr>
+<td>Fix failing tests</td>
+<td>Myself</td>
+<td>Immediately</td>
+</tr>
+<tr>
+<td>CI/CD test execution</td>
+<td>GitHub Actions</td>
+<td>On push &amp; PR</td>
+</tr>
+<tr>
+<td>Final review</td>
+<td>Mentors</td>
+<td>Before submission</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7-responsibility">7. Responsibility</h2>
+<p>I am responsible for:</p>
+<ul>
+<li>Writing and updating unit tests  </li>
+<li>Ensuring test coverage  </li>
+<li>Maintaining stability after changes  </li>
+</ul>
+<p>Mentors will verify tests during the final review.</p>
+<hr />
+<h2 id="8-risks-mitigation">8. Risks &amp; Mitigation</h2>
+<table>
+<thead>
+<tr>
+<th>Risk</th>
+<th>Impact</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Not enough time for tests</td>
+<td>Medium</td>
+<td>Write tests parallel to development</td>
+</tr>
+<tr>
+<td>Incorrect mocking of Axios/DB</td>
+<td>High</td>
+<td>Use Jest mocks consistently</td>
+</tr>
+<tr>
+<td>Low test coverage</td>
+<td>Medium</td>
+<td>Monitor coverage reports</td>
+</tr>
+<tr>
+<td>Tests breaking after code changes</td>
+<td>High</td>
+<td>Update tests with every change</td>
+</tr>
+<tr>
+<td>Complex business logic</td>
+<td>Medium</td>
+<td>Move logic to service layer</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9-tools">9. Tools</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jest</td>
+<td>Core testing framework</td>
+</tr>
+<tr>
+<td>React Testing Library</td>
+<td>Component tests</td>
+</tr>
+<tr>
+<td>Supertest</td>
+<td>API route testing</td>
+</tr>
+<tr>
+<td>Jest Mocks / Sequelize Mock</td>
+<td>DB mocking</td>
+</tr>
+<tr>
+<td>ESLint + Prettier</td>
+<td>Code quality</td>
+</tr>
+<tr>
+<td>GitHub Actions</td>
+<td><strong>Mandatory</strong> CI/CD test automation</td>
+</tr>
+<tr>
+<td>Axios</td>
+<td>Mockable API client</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10-commands">10. Commands</h2>
+<h3 id="frontend">Frontend</h3>
+<pre><code>npm test
+npm run test:coverage
+</code></pre>
+<h3 id="backend">Backend</h3>
+<pre><code>npm test
+npm run test:coverage
+</code></pre>
+<h3 id="cicd">CI/CD</h3>
+<h4 id="runs-automatically-on">Runs automatically on:</h4>
+<ul>
+<li>Every push  </li>
+<li>Every pull request  </li>
+<li>Before merging to <code>develop</code> or <code>main</code></li>
+</ul>
+<hr />
+<h2 id="11-summary">11. Summary</h2>
+<p>This Unit Test Plan ensures the <strong>Joblelo Job Platform</strong> remains stable, accurate, and reliable by enforcing strict testing standards, including:</p>
+<ul>
+<li>Positive + Negative tests  </li>
+<li>Mocked API &amp; database tests  </li>
+<li>Mandatory CI/CD automation  </li>
+</ul>
+<p>This plan will guide testing throughout the entire development lifecycle.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "content.code.annotate", "toc.integrate", "navigation.tabs"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
