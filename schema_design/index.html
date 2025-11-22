@@ -1122,7 +1122,6 @@
 <tr>
 <th>Table Name</th>
 <th>Indexed Column(s)</th>
-<th>Reason for Indexing</th>
 <th>Use Case</th>
 </tr>
 </thead>
@@ -1130,37 +1129,31 @@
 <tr>
 <td><strong>users</strong></td>
 <td><code>email</code></td>
-<td>Ensures unique user login and faster authentication lookups.</td>
 <td>Validate login credentials instantly using email.</td>
 </tr>
 <tr>
 <td><strong>roles</strong></td>
 <td><code>name</code></td>
-<td>Speeds up role identification during authorization checks.</td>
 <td>Quickly verify role type (Job Seeker, Employer, Admin).</td>
 </tr>
 <tr>
 <td><strong>user_roles</strong></td>
-<td>(<code>user_id</code>, <code>role_id</code>) <em>(Composite)</em></td>
-<td>Optimizes role-based permission checks.</td>
+<td>(<code>user_id</code>, <code>role_id</code>)</td>
 <td>Retrieve roles assigned to a specific user.</td>
 </tr>
 <tr>
 <td><strong>companies</strong></td>
 <td><code>name</code></td>
-<td>Allows faster company searches and suggestions.</td>
 <td>Find a company while posting or managing jobs.</td>
 </tr>
 <tr>
 <td><strong>jobs</strong></td>
-<td>(<code>location</code>, <code>job_type</code>) <em>(Composite)</em></td>
-<td>Improves search and filtering performance for job listings.</td>
+<td>(<code>created_by</code>, <code>title</code>, <code>company_id</code>)</td>
 <td>Display jobs filtered by title or company.</td>
 </tr>
 <tr>
 <td><strong>applications</strong></td>
-<td>(<code>job_id</code>, <code>job_seeker_id</code>) <em>(Composite)</em></td>
-<td>Prevents duplicate applications and speeds up lookups.</td>
+<td>(<code>job_id</code>, <code>job_seeker_id</code>)</td>
 <td>Check if a job seeker has already applied to a job.</td>
 </tr>
 </tbody>
