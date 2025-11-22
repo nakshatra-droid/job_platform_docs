@@ -2,7 +2,7 @@
 
 ## 1. Use Case Overview
 
-The **Job Platform** consists of two main user roles — **Job Seeker** and **Employer** — each performing specific actions.  
+The **Joblelo Platform** consists of two main user roles **Job Seeker** and **Employer** each performing specific actions.  
 Below are detailed use cases describing interactions between the user and the system.
 
 ---
@@ -15,7 +15,6 @@ Below are detailed use cases describing interactions between the user and the sy
 | **Employer** | Company or recruiter posting jobs. |
 | **System (Backend)** | Node.js + Express API handling business logic. |
 | **Database** | storing users, jobs, and applications. |
-| **AWS S3** | File storage for resumes and others. |
 
 ---
 
@@ -25,7 +24,7 @@ Below are detailed use cases describing interactions between the user and the sy
 | Field | Description |
 |--------|-------------|
 | **Actors** | Job Seeker |
-| **Description** | Allows a job seeker to register with name, email, password. |
+| **Description** | Allows a job seeker to register with all required details. |
 | **Precondition** | User is not already registered. |
 | **Main Flow** | 1. Fill registration form → 2. Submit → 3. System validates → 4. Creates record in DB |
 | **Postcondition** | Account created successfully and JWT issued. |
@@ -36,10 +35,10 @@ Below are detailed use cases describing interactions between the user and the sy
 | Field | Description |
 |--------|-------------|
 | **Actors** | Employer |
-| **Description** | Employer registers by providing company name, email, password. |
+| **Description** | Employer registers by providing their details. |
 | **Precondition** | Employer not already registered. |
 | **Main Flow** | 1. Fill form → 2. Validate → 3. Save in DB with role=employer |
-| **Postcondition** | Employer can log in to post jobs. |
+| **Postcondition** | Account created successfully and JWT issued. |
 
 ---
 
@@ -47,9 +46,9 @@ Below are detailed use cases describing interactions between the user and the sy
 | Field | Description |
 |--------|-------------|
 | **Actors** | Job Seeker |
-| **Description** | Job seeker can browse or filter job listings. |
+| **Description** | Job seeker can browse job listings. |
 | **Precondition** | User logged in. |
-| **Main Flow** | 1. Enter search query → 2. API fetches filtered jobs → 3. Display list |
+| **Main Flow** | 1. Enter search query → 2. Jobs are filtered → 3. Display list |
 | **Postcondition** | Matching jobs displayed to user. |
 
 ---
@@ -58,9 +57,9 @@ Below are detailed use cases describing interactions between the user and the sy
 | Field | Description |
 |--------|-------------|
 | **Actors** | Job Seeker |
-| **Description** | Apply for a job by attaching resume (stored in S3). |
+| **Description** | Apply for a job. |
 | **Precondition** | User logged in and job exists. |
-| **Main Flow** | 1. Click Apply → 2. Upload Resume → 3. Application stored in DB |
+| **Main Flow** | 1. Click Apply → 2. User linked to application → 3. Application stored in DB |
 | **Postcondition** | Job application created successfully. |
 
 ---
@@ -91,7 +90,7 @@ Below are detailed use cases describing interactions between the user and the sy
 | Field | Description |
 |--------|-------------|
 | **Actors** | Job Seeker / Employer |
-| **Description** | Update profile info or upload a profile image (S3). |
+| **Description** | Update profile info. |
 | **Precondition** | User logged in. |
 | **Main Flow** | 1. Open Profile → 2. Edit info → 3. Save |
 | **Postcondition** | Profile updated successfully. |
@@ -107,8 +106,6 @@ Below are detailed use cases describing interactions between the user and the sy
 | **Main Flow** | 1. Click logout → 2. Token cleared |
 | **Postcondition** | Session ended. |
 
----
+<!-- ## 4. Use Case Diagram
 
-## 4. Use Case Diagram
-
-![aws](../assets/ucd.png)
+![aws](../assets/ucd.png) -->

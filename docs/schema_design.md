@@ -1,6 +1,6 @@
 # Schema Design
 
-This section illustrates the **database schema** used in the **Job Platform** project. The system uses **PostgreSQL** hosted on **AWS RDS**
+This section illustrates the **database schema** used in the **Joblelo Platform** project. The system uses **PostgreSQL** hosted on **AWS RDS**
 
 ---
 
@@ -27,9 +27,14 @@ Below are detailed descriptions of each table and their respective fields.
 | **email** | VARCHAR | User’s email address (must be unique). |
 | **phone** | VARCHAR | User’s contact number. |
 | **password** | VARCHAR | Hashed password using bcrypt. |
-| **is_verified** | BOOLEAN | Indicates if the user's email is verified. |
-| **address** | TEXT | Physical address of the user. |
-| **resume_url** | TEXT | AWS S3 URL of the uploaded resume. |
+| **work_email** | VARCHAR | Work email of recruiter. |
+| **city** | VARCHAR | City of user. |
+| **state** | VARCHAR | State of user. |
+| **country** | VARCHAR | Country of user. |
+| **resume_url** | TEXT | URL of the uploaded resume. |
+| **created_at** | TIMESTAMPTZ | Record creation timestamp. |
+| **updated_at** | TIMESTAMPTZ | Record update timestamp. |
+| **deleted_at** | TIMESTAMPTZ | Soft delete marker. |
 
 ---
 
@@ -38,7 +43,7 @@ Below are detailed descriptions of each table and their respective fields.
 | Field | Data Type | Description |
 |--------|------------|-------------|
 | **id** | SERIAL (PK) | Unique identifier for the role. |
-| **name** | VARCHAR | Role name — e.g., `Job Seeker`, `Employer`, `Admin`. |
+| **name** | VARCHAR | Role name — e.g., `Job Seeker`, `Employer`. |
 
 ---
 
@@ -90,7 +95,9 @@ Below are detailed descriptions of each table and their respective fields.
 | **title** | VARCHAR | Job title. |
 | **job_description** | TEXT | Detailed job description. |
 | **salary** | VARCHAR | Salary or compensation details. |
-| **location** | VARCHAR | Job location. |
+| **city** | VARCHAR | City of job. |
+| **state** | VARCHAR | State of job. |
+| **country** | VARCHAR | Country of job. |
 | **job_type** | ENUM | Type of job (e.g., Full-Time, Part-Time, Internship). |
 | **created_at** | TIMESTAMPTZ | Record creation timestamp. |
 | **updated_at** | TIMESTAMPTZ | Record update timestamp. |
@@ -105,7 +112,7 @@ Below are detailed descriptions of each table and their respective fields.
 | **id** | SERIAL (PK) | Unique identifier for each application. |
 | **job_id** | INT (FK) | References `JOBS.id`. |
 | **job_seeker_id** | INT (FK) | References `USERS.id`. |
-| **status** | ENUM | Application status (`Pending`, `Accepted`, `Rejected`). |
+| **status** | ENUM | Application status (`Applied`, `Accepted`, `Rejected`). |
 | **created_at** | TIMESTAMPTZ | Record creation timestamp. |
 | **updated_at** | TIMESTAMPTZ | Record update timestamp. |
 | **deleted_at** | TIMESTAMPTZ | Soft delete marker. |
@@ -122,5 +129,5 @@ To enhance query performance for common operations like login, job search, and a
 | **roles** | `name` | Speeds up role identification during authorization checks. | Quickly verify role type (Job Seeker, Employer, Admin). |
 | **user_roles** | (`user_id`, `role_id`) *(Composite)* | Optimizes role-based permission checks. | Retrieve roles assigned to a specific user. |
 | **companies** | `name` | Allows faster company searches and suggestions. | Find a company while posting or managing jobs. |
-| **jobs** | (`location`, `job_type`) *(Composite)* | Improves search and filtering performance for job listings. | Display jobs filtered by type or location. |
+| **jobs** | (`location`, `job_type`) *(Composite)* | Improves search and filtering performance for job listings. | Display jobs filtered by title or company. |
 | **applications** | (`job_id`, `job_seeker_id`) *(Composite)* | Prevents duplicate applications and speeds up lookups. | Check if a job seeker has already applied to a job. |

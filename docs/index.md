@@ -1,18 +1,18 @@
-# Job Platform Documentation
+# Joblelo Documentation
 
-Welcome to the **Job Platform Project Documentation** — a comprehensive guide to the design, development, and functionality of the Job Portal web application.
+Welcome to the **Joblelo Project Documentation** — a comprehensive guide to the design, development, and functionality of the Joblelo web application.
 
 ---
 
 ## Introduction
 
-The **Job Platform** is a full-stack web application designed to simplify the hiring and job-seeking process by bridging the gap between **job seekers** and **employers**.  
+The **Joblelo Platform** is a full-stack web application designed to simplify the hiring and job-seeking process by bridging the gap between **job seekers** and **employers**.  
 
 #### It enables:
 - Job seekers to find and apply for jobs easily.  
 - Employers to create, manage, and track job postings efficiently.  
 
-The platform ensures **data security, scalability, and accessibility** through a role-based authentication and authorization model, powered by **JWT (JSON Web Tokens)**.  It is built using **React.js**, **Node.js**, **Express.js**, and **PostgreSQL**, with **AWS S3** for secure file storage.  
+The platform ensures **data security, scalability, and accessibility** through a role-based authentication and authorization model, powered by **JWT (JSON Web Tokens)**.  It is built using **React.js**, **Node.js**, **Express.js**, and **PostgreSQL**, with **Sequelize** as ORM.  
 
 This project represents a real-world implementation of the above **Tech stack** with cloud integration and responsive design principles.
 
@@ -26,8 +26,8 @@ The system is divided into two main portals, each with specific responsibilities
 - Register and log in securely.  
 - Browse and search for job opportunities.  
 - Apply for jobs.  
-- Manage profile and update password.  
-- Track applications through the "My Applications" section.  
+- Manage profile.  
+- Track applications.  
 - Logout securely.
 
 ### Employer Portal

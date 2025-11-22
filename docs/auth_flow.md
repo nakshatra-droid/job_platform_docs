@@ -14,7 +14,7 @@
 |------|--------------|
 | **Register** | User submits details → backend hashes password → saves to DB. |
 | **Login** | Backend validates credentials → fetches roles → issues JWT. |
-| **JWT Storage** | Frontend stores token (e.g. localStorage / cookie). |
+| **JWT Storage** | Frontend stores token. |
 | **Authorization** | Every protected API request includes JWT → backend verifies it → grants/denies access based on role. |
 
 ---
