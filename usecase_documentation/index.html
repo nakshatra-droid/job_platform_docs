@@ -25,7 +25,7 @@
     
     
       
-        <title>Use Case Documentation - Job Platform Documentation</title>
+        <title>Use Case Documentation - Joblelo Documentation</title>
       
     
     
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Job Platform Documentation" class="md-header__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+    <a href=".." title="Joblelo Documentation" class="md-header__button md-logo" aria-label="Joblelo Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Job Platform Documentation
+            Joblelo Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -252,13 +252,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Job Platform Documentation" class="md-nav__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+    <a href=".." title="Joblelo Documentation" class="md-nav__button md-logo" aria-label="Joblelo Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Job Platform Documentation
+    Joblelo Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -507,17 +507,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-use-case-diagram" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Use Case Diagram
-      
-    </span>
-  </a>
   
 </li>
       
@@ -773,7 +762,7 @@
 
 <h1 id="use-case-documentation">Use Case Documentation</h1>
 <h2 id="1-use-case-overview">1. Use Case Overview</h2>
-<p>The <strong>Job Platform</strong> consists of two main user roles — <strong>Job Seeker</strong> and <strong>Employer</strong> — each performing specific actions.<br />
+<p>The <strong>Joblelo Platform</strong> consists of two main user roles <strong>Job Seeker</strong> and <strong>Employer</strong> each performing specific actions.<br />
 Below are detailed use cases describing interactions between the user and the system.</p>
 <hr />
 <h2 id="2-actors">2. Actors</h2>
@@ -801,10 +790,6 @@ Below are detailed use cases describing interactions between the user and the sy
 <td><strong>Database</strong></td>
 <td>storing users, jobs, and applications.</td>
 </tr>
-<tr>
-<td><strong>AWS S3</strong></td>
-<td>File storage for resumes and others.</td>
-</tr>
 </tbody>
 </table>
 <hr />
@@ -824,7 +809,7 @@ Below are detailed use cases describing interactions between the user and the sy
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>Allows a job seeker to register with name, email, password.</td>
+<td>Allows a job seeker to register with all required details.</td>
 </tr>
 <tr>
 <td><strong>Precondition</strong></td>
@@ -856,7 +841,7 @@ Below are detailed use cases describing interactions between the user and the sy
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>Employer registers by providing company name, email, password.</td>
+<td>Employer registers by providing their details.</td>
 </tr>
 <tr>
 <td><strong>Precondition</strong></td>
@@ -868,7 +853,7 @@ Below are detailed use cases describing interactions between the user and the sy
 </tr>
 <tr>
 <td><strong>Postcondition</strong></td>
-<td>Employer can log in to post jobs.</td>
+<td>Account created successfully and JWT issued.</td>
 </tr>
 </tbody>
 </table>
@@ -888,7 +873,7 @@ Below are detailed use cases describing interactions between the user and the sy
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>Job seeker can browse or filter job listings.</td>
+<td>Job seeker can browse job listings.</td>
 </tr>
 <tr>
 <td><strong>Precondition</strong></td>
@@ -896,7 +881,7 @@ Below are detailed use cases describing interactions between the user and the sy
 </tr>
 <tr>
 <td><strong>Main Flow</strong></td>
-<td>1. Enter search query → 2. API fetches filtered jobs → 3. Display list</td>
+<td>1. Enter search query → 2. Jobs are filtered → 3. Display list</td>
 </tr>
 <tr>
 <td><strong>Postcondition</strong></td>
@@ -920,7 +905,7 @@ Below are detailed use cases describing interactions between the user and the sy
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>Apply for a job by attaching resume (stored in S3).</td>
+<td>Apply for a job.</td>
 </tr>
 <tr>
 <td><strong>Precondition</strong></td>
@@ -928,7 +913,7 @@ Below are detailed use cases describing interactions between the user and the sy
 </tr>
 <tr>
 <td><strong>Main Flow</strong></td>
-<td>1. Click Apply → 2. Upload Resume → 3. Application stored in DB</td>
+<td>1. Click Apply → 2. User linked to application → 3. Application stored in DB</td>
 </tr>
 <tr>
 <td><strong>Postcondition</strong></td>
@@ -1016,7 +1001,7 @@ Below are detailed use cases describing interactions between the user and the sy
 </tr>
 <tr>
 <td><strong>Description</strong></td>
-<td>Update profile info or upload a profile image (S3).</td>
+<td>Update profile info.</td>
 </tr>
 <tr>
 <td><strong>Precondition</strong></td>
@@ -1064,9 +1049,9 @@ Below are detailed use cases describing interactions between the user and the sy
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="4-use-case-diagram">4. Use Case Diagram</h2>
-<p><img alt="aws" src="../assets/ucd.png" /></p>
+<!-- ## 4. Use Case Diagram
+
+![aws](../assets/ucd.png) -->
 
 
 

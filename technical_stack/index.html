@@ -25,7 +25,7 @@
     
     
       
-        <title>Technical Stack - Job Platform Documentation</title>
+        <title>Technical Stack - Joblelo Documentation</title>
       
     
     
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Job Platform Documentation" class="md-header__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+    <a href=".." title="Joblelo Documentation" class="md-header__button md-logo" aria-label="Joblelo Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Job Platform Documentation
+            Joblelo Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -252,13 +252,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Job Platform Documentation" class="md-nav__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+    <a href=".." title="Joblelo Documentation" class="md-nav__button md-logo" aria-label="Joblelo Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Job Platform Documentation
+    Joblelo Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -716,7 +716,7 @@
 
 
 <h1 id="technical-stack">Technical Stack</h1>
-<p>This section describes the <strong>technical foundation</strong> of the <strong>Job Platform</strong> project — covering all technologies, tools, and services used across the frontend, backend, and deployment layers.  </p>
+<p>This section describes the <strong>technical foundation</strong> of the <strong>Joblelo Platform</strong> project — covering all technologies, tools, and services used across the frontend, backend, and deployment layers.  </p>
 <p>The stack has been carefully selected to ensure <strong>scalability</strong>, <strong>security</strong>, <strong>maintainability</strong>, and <strong>performance</strong> for a real-world, production-ready system.</p>
 <hr />
 <h2 id="frontend">Frontend</h2>
@@ -741,17 +741,17 @@
 </tr>
 <tr>
 <td><strong>Hosting Platform</strong></td>
-<td>Netlify</td>
-<td>Deployed for fast, global delivery with automatic builds from GitHub.</td>
+<td>Vercel</td>
+<td>Deployed for fast, global delivery with automatic builds.</td>
 </tr>
 <tr>
 <td><strong>Routing &amp; State</strong></td>
-<td>React Router, Context API</td>
+<td>React Router</td>
 <td>Handles navigation and user authentication states.</td>
 </tr>
 <tr>
 <td><strong>API Communication</strong></td>
-<td>Axios / Fetch API</td>
+<td>Axios</td>
 <td>Sends HTTP requests securely to backend endpoints.</td>
 </tr>
 <tr>
@@ -790,17 +790,12 @@
 <tr>
 <td><strong>File Handling</strong></td>
 <td>Multer</td>
-<td>Handles multipart/form-data for file uploads to S3.</td>
+<td>Handles multipart/form-data for file.</td>
 </tr>
 <tr>
 <td><strong>Hosting</strong></td>
 <td>AWS EC2</td>
 <td>Runs backend application in a scalable cloud environment.</td>
-</tr>
-<tr>
-<td><strong>File Storage</strong></td>
-<td>AWS S3</td>
-<td>Stores resumes, profile pictures, and job-related files securely.</td>
 </tr>
 </tbody>
 </table>
@@ -845,10 +840,6 @@
 <td><strong>Amazon RDS (PostgreSQL)</strong></td>
 <td>Stores relational data with reliability, scaling, and monitoring.</td>
 </tr>
-<tr>
-<td><strong>Amazon S3</strong></td>
-<td>Handles storage for user-uploaded files (resumes, images).</td>
-</tr>
 </tbody>
 </table>
 <hr />
@@ -875,7 +866,7 @@
 </tr>
 <tr>
 <td><strong>Security Practices</strong></td>
-<td>Passwords hashed using bcrypt; sensitive environment variables stored in Secrets Manager.</td>
+<td>Passwords hashed using bcrypt.</td>
 </tr>
 <tr>
 <td><strong>Access Control</strong></td>
@@ -924,7 +915,7 @@
 <tbody>
 <tr>
 <td><strong>Frontend Deployment</strong></td>
-<td>Netlify</td>
+<td>Vercel</td>
 <td>Continuous deployment from main branch with build triggers.</td>
 </tr>
 <tr>
@@ -936,11 +927,6 @@
 <td><strong>Database</strong></td>
 <td>AWS RDS (PostgreSQL)</td>
 <td>Managed cloud database service.</td>
-</tr>
-<tr>
-<td><strong>Storage</strong></td>
-<td>AWS S3</td>
-<td>Persistent file storage.</td>
 </tr>
 <tr>
 <td><strong>CI/CD Pipeline</strong></td>

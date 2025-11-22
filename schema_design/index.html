@@ -25,7 +25,7 @@
     
     
       
-        <title>Schema Design - Job Platform Documentation</title>
+        <title>Schema Design - Joblelo Documentation</title>
       
     
     
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Job Platform Documentation" class="md-header__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+    <a href=".." title="Joblelo Documentation" class="md-header__button md-logo" aria-label="Joblelo Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Job Platform Documentation
+            Joblelo Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -252,13 +252,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Job Platform Documentation" class="md-nav__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+    <a href=".." title="Joblelo Documentation" class="md-nav__button md-logo" aria-label="Joblelo Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Job Platform Documentation
+    Joblelo Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -755,7 +755,7 @@
 
 
 <h1 id="schema-design">Schema Design</h1>
-<p>This section illustrates the <strong>database schema</strong> used in the <strong>Job Platform</strong> project. The system uses <strong>PostgreSQL</strong> hosted on <strong>AWS RDS</strong></p>
+<p>This section illustrates the <strong>database schema</strong> used in the <strong>Joblelo Platform</strong> project. The system uses <strong>PostgreSQL</strong> hosted on <strong>AWS RDS</strong></p>
 <hr />
 <h2 id="entity-relationship-diagram-erd">Entity Relationship Diagram (ERD)</h2>
 <p>Below is the ER diagram representing the structure and relationships between the tables:</p>
@@ -800,19 +800,44 @@
 <td>Hashed password using bcrypt.</td>
 </tr>
 <tr>
-<td><strong>is_verified</strong></td>
-<td>BOOLEAN</td>
-<td>Indicates if the user's email is verified.</td>
+<td><strong>work_email</strong></td>
+<td>VARCHAR</td>
+<td>Work email of recruiter.</td>
 </tr>
 <tr>
-<td><strong>address</strong></td>
-<td>TEXT</td>
-<td>Physical address of the user.</td>
+<td><strong>city</strong></td>
+<td>VARCHAR</td>
+<td>City of user.</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>VARCHAR</td>
+<td>State of user.</td>
+</tr>
+<tr>
+<td><strong>country</strong></td>
+<td>VARCHAR</td>
+<td>Country of user.</td>
 </tr>
 <tr>
 <td><strong>resume_url</strong></td>
 <td>TEXT</td>
-<td>AWS S3 URL of the uploaded resume.</td>
+<td>URL of the uploaded resume.</td>
+</tr>
+<tr>
+<td><strong>created_at</strong></td>
+<td>TIMESTAMPTZ</td>
+<td>Record creation timestamp.</td>
+</tr>
+<tr>
+<td><strong>updated_at</strong></td>
+<td>TIMESTAMPTZ</td>
+<td>Record update timestamp.</td>
+</tr>
+<tr>
+<td><strong>deleted_at</strong></td>
+<td>TIMESTAMPTZ</td>
+<td>Soft delete marker.</td>
 </tr>
 </tbody>
 </table>
@@ -835,7 +860,7 @@
 <tr>
 <td><strong>name</strong></td>
 <td>VARCHAR</td>
-<td>Role name — e.g., <code>Job Seeker</code>, <code>Employer</code>, <code>Admin</code>.</td>
+<td>Role name — e.g., <code>Job Seeker</code>, <code>Employer</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1005,9 +1030,19 @@
 <td>Salary or compensation details.</td>
 </tr>
 <tr>
-<td><strong>location</strong></td>
+<td><strong>city</strong></td>
 <td>VARCHAR</td>
-<td>Job location.</td>
+<td>City of job.</td>
+</tr>
+<tr>
+<td><strong>state</strong></td>
+<td>VARCHAR</td>
+<td>State of job.</td>
+</tr>
+<tr>
+<td><strong>country</strong></td>
+<td>VARCHAR</td>
+<td>Country of job.</td>
 </tr>
 <tr>
 <td><strong>job_type</strong></td>
@@ -1060,7 +1095,7 @@
 <tr>
 <td><strong>status</strong></td>
 <td>ENUM</td>
-<td>Application status (<code>Pending</code>, <code>Accepted</code>, <code>Rejected</code>).</td>
+<td>Application status (<code>Applied</code>, <code>Accepted</code>, <code>Rejected</code>).</td>
 </tr>
 <tr>
 <td><strong>created_at</strong></td>
@@ -1120,7 +1155,7 @@
 <td><strong>jobs</strong></td>
 <td>(<code>location</code>, <code>job_type</code>) <em>(Composite)</em></td>
 <td>Improves search and filtering performance for job listings.</td>
-<td>Display jobs filtered by type or location.</td>
+<td>Display jobs filtered by title or company.</td>
 </tr>
 <tr>
 <td><strong>applications</strong></td>

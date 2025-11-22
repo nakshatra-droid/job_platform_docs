@@ -25,7 +25,7 @@
     
     
       
-        <title>Functional Documentation - Job Platform Documentation</title>
+        <title>Functional Documentation - Joblelo Documentation</title>
       
     
     
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Job Platform Documentation" class="md-header__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+    <a href=".." title="Joblelo Documentation" class="md-header__button md-logo" aria-label="Joblelo Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Job Platform Documentation
+            Joblelo Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -252,13 +252,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Job Platform Documentation" class="md-nav__button md-logo" aria-label="Job Platform Documentation" data-md-component="logo">
+    <a href=".." title="Joblelo Documentation" class="md-nav__button md-logo" aria-label="Joblelo Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Job Platform Documentation
+    Joblelo Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -764,8 +764,7 @@
 <ul>
 <li>Enable <strong>Job Seekers</strong> to discover and apply for relevant jobs.</li>
 <li>Allow <strong>Employers</strong> to manage job postings and applications easily.</li>
-<li>Implement <strong>role-based access control</strong> with <strong>JWT authentication</strong>.</li>
-<li>Integrate <strong>AWS S3</strong> for file uploads and storage.</li>
+<li>Implement <strong>role-based access control</strong> with <strong>authentication</strong>.</li>
 <li>Build a <strong>secure and scalable</strong> web-based job portal.</li>
 <li>Ensure <strong>user-friendly UI</strong> using React and Tailwind CSS.</li>
 </ul>
@@ -775,7 +774,6 @@
 <li>Two major user roles — <strong>Job Seeker</strong> and <strong>Employer</strong>.</li>
 <li>CRUD operations for users and job postings.</li>
 <li>Secure authentication and data validation.</li>
-<li>Integration with <strong>AWS S3</strong> for storing files.</li>
 <li>Responsive PWA-enabled frontend.</li>
 </ul>
 <hr />
@@ -793,8 +791,8 @@
 <td>Role-based registration and login using JWT.</td>
 </tr>
 <tr>
-<td><strong>Job Search &amp; Filter</strong></td>
-<td>Search by job skills.</td>
+<td><strong>Job Search</strong></td>
+<td>Search by job by title and companies.</td>
 </tr>
 <tr>
 <td><strong>Job Applications</strong></td>
@@ -806,11 +804,11 @@
 </tr>
 <tr>
 <td><strong>Job Management</strong></td>
-<td>Employers can post, edit, or delete jobs.</td>
+<td>Employers can post or delete jobs.</td>
 </tr>
 <tr>
 <td><strong>File Uploads</strong></td>
-<td>Resumes and other files are stored in S3.</td>
+<td>Resumes can be uploaded of seekers.</td>
 </tr>
 <tr>
 <td><strong>Responsive UI</strong></td>
@@ -880,11 +878,6 @@
 <td>Secure login system with encrypted passwords and token-based access management.</td>
 </tr>
 <tr>
-<td><strong>Cloud Storage</strong></td>
-<td>AWS S3</td>
-<td>Storing user resumes, profile images, and company logos safely and scalably.</td>
-</tr>
-<tr>
 <td><strong>Testing</strong></td>
 <td>Jest, Postman</td>
 <td>Unit and API testing to ensure reliability and prevent regressions.</td>
@@ -905,10 +898,9 @@
 <h2 id="expected-outcomes">Expected Outcomes</h2>
 <ul>
 <li>A <strong>fully functional</strong> and <strong>role-based</strong> job portal system that demonstrates secure authentication, data management, and job application workflows.</li>
-<li>Proper <strong>integration with cloud storage</strong> (AWS S3) for file uploads such as resumes and company logos.</li>
 <li>Clean and <strong>responsive frontend</strong> designed using Tailwind CSS and React.</li>
 <li>Reliable <strong>backend APIs</strong> for seamless communication between the client and server.</li>
-<li>Scalable architecture deployable on <strong>AWS, Render, or Vercel</strong>.</li>
+<li>Scalable architecture deployable on <strong>AWS and Vercel</strong>.</li>
 <li>Comprehensive documentation that fulfills academic and professional evaluation criteria.</li>
 </ul>
 <hr />
@@ -931,7 +923,7 @@
 </tr>
 <tr>
 <td><strong>Scalability</strong></td>
-<td>Modular Express structure and cloud-based file storage (S3).</td>
+<td>Modular Express structure and cloud-based file storage.</td>
 </tr>
 <tr>
 <td><strong>Usability</strong></td>
@@ -968,15 +960,19 @@
 <tbody>
 <tr>
 <td><strong>Admin Dashboard</strong></td>
-<td>A centralized admin portal to manage users, employers, and posted jobs.</td>
+<td>A centralized admin portal to manage everything.</td>
 </tr>
 <tr>
 <td><strong>Email / SMS Notifications</strong></td>
 <td>Notify users on new jobs and applications.</td>
 </tr>
 <tr>
-<td><strong>AI-based Resume Recommendations</strong></td>
-<td>Suggestions on resume based on the job description.</td>
+<td><strong>Cloud based file storage</strong></td>
+<td>Store resumes on S3.</td>
+</tr>
+<tr>
+<td><strong>OTP based verification</strong></td>
+<td>Verify every user with OTP.</td>
 </tr>
 </tbody>
 </table>
