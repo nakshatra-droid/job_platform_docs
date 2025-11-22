@@ -2,8 +2,6 @@
 
 This section describes the **technical foundation** of the **Joblelo Platform** project — covering all technologies, tools, and services used across the frontend, backend, and deployment layers.  
 
-The stack has been carefully selected to ensure **scalability**, **security**, **maintainability**, and **performance** for a real-world, production-ready system.
-
 ---
 
 ## Frontend
@@ -15,7 +13,7 @@ The stack has been carefully selected to ensure **scalability**, **security**, *
 | **Hosting Platform** | Vercel | Deployed for fast, global delivery with automatic builds. |
 | **Routing & State** | React Router | Handles navigation and user authentication states. |
 | **API Communication** | Axios | Sends HTTP requests securely to backend endpoints. |
-| **PWA Support (Optional)** | Service Worker | Enables offline capability and “Add to Home Screen” option. |
+| **PWA Support** | Service Worker | Enables offline capability and “Add to Home Screen” option. |
 
 ---
 

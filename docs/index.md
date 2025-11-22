@@ -12,7 +12,7 @@ The **Joblelo Platform** is a full-stack web application designed to simplify th
 - Job seekers to find and apply for jobs easily.  
 - Employers to create, manage, and track job postings efficiently.  
 
-The platform ensures **data security, scalability, and accessibility** through a role-based authentication and authorization model, powered by **JWT (JSON Web Tokens)**.  It is built using **React.js**, **Node.js**, **Express.js**, and **PostgreSQL**, with **Sequelize** as ORM.  
+It is built using **React.js**, **Node.js**, **Express.js**, and **PostgreSQL**, with **Sequelize** as ORM.  
 
 This project represents a real-world implementation of the above **Tech stack** with cloud integration and responsive design principles.
 

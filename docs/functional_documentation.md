@@ -88,12 +88,11 @@ The **Job Platform** aims to provide a **centralized digital solution** that sim
 | Attribute | Description |
 |------------|-------------|
 | **Security** | Implementation of JWT-based authentication, bcrypt password hashing, role-based route protection, and use of `.env` for sensitive credentials. |
-| **Performance** | Optimized SQL queries for job listings, and lazy loading in React components for better performance. |
-| **Scalability** | Modular Express structure and cloud-based file storage. |
+| **Performance** | Optimized SQL queries by indexes. |
 | **Usability** | Intuitive navigation, simple forms, and consistent design patterns. |
-| **Reliability** | Error handling and status codes in APIs, connection monitoring, and fallback messages on frontend. |
-| **Maintainability** | Clear folder structure, modular controllers/services, and reusable components. |
-| **Portability** | Cross-browser compatibility and deployment-friendly Docker setup. |
+| **Reliability** | Error handling and status codes in APIs, and fallback messages on frontend. |
+| **Maintainability** | Clear folder structure, and reusable components. |
+| **Portability** | Cross-browser compatibility. |
 | **Availability** | Deployed using cloud hosting. |
 
 ---
@@ -115,7 +114,7 @@ The Job Platform is designed with extensibility in mind. Future enhancements can
 ## Conclusion
 
 The **Job Platform** successfully bridges the gap between job seekers and employers by providing a **secure**, **intuitive**, and **cloud-enabled** recruitment system.  
-It demonstrates strong technical capabilities through the use of **React, Node.js, Express, PostgreSQL**, and **AWS S3**, while also maintaining clarity, scalability, and user-centric design.  
+It demonstrates strong technical capabilities through the use of **React, Node.js, Express, PostgreSQL** while also maintaining clarity, scalability, and user-centric design.  
 
 This documentation outlines every essential component required to understand, evaluate, and enhance the system — ensuring a comprehensive representation of both **academic and professional-grade software engineering practices**.
 
