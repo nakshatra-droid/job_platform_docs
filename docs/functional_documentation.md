@@ -66,7 +66,7 @@ The **Job Platform** aims to provide a **centralized digital solution** that sim
 | **Frontend** | React.js, Tailwind CSS | Building a responsive and interactive user interface with reusable components and fast rendering. |
 | **Backend** | Node.js, Express.js | Handling server-side logic, RESTful APIs, authentication, and role-based authorization. |
 | **Database** | PostgreSQL | SQL database for storing user data, job postings, and application details efficiently. |
-| **Authentication** | JWT (JSON Web Token), bcrypt | Secure login system with encrypted passwords and token-based access management. |
+| **Authentication** | JWT (JSON Web Token), bcrypt | Secure login system with hashed passwords and token-based access management. |
 | **Testing** | Jest, Postman | Unit and API testing to ensure reliability and prevent regressions. |
 | **Deployment & CI/CD** | GitHub Actions, AWS EC2 | Automating build, test, and deploy pipelines to ensure continuous integration and delivery. |
 | **Documentation** | MkDocs Material | Generating structured, visually consistent, and easy-to-navigate documentation. |

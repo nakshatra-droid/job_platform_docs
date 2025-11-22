@@ -123,11 +123,11 @@ Below are detailed descriptions of each table and their respective fields.
 
 To enhance query performance for common operations like login, job search, and application tracking, selective single and composite indexes are implemented on frequently accessed columns.
 
-| Table Name | Indexed Column(s) | Reason for Indexing | Use Case |
-|-------------|------------------|---------------------|-----------|
-| **users** | `email` | Ensures unique user login and faster authentication lookups. | Validate login credentials instantly using email. |
-| **roles** | `name` | Speeds up role identification during authorization checks. | Quickly verify role type (Job Seeker, Employer, Admin). |
-| **user_roles** | (`user_id`, `role_id`) *(Composite)* | Optimizes role-based permission checks. | Retrieve roles assigned to a specific user. |
-| **companies** | `name` | Allows faster company searches and suggestions. | Find a company while posting or managing jobs. |
-| **jobs** | (`location`, `job_type`) *(Composite)* | Improves search and filtering performance for job listings. | Display jobs filtered by title or company. |
-| **applications** | (`job_id`, `job_seeker_id`) *(Composite)* | Prevents duplicate applications and speeds up lookups. | Check if a job seeker has already applied to a job. |
+| Table Name | Indexed Column(s) | Use Case |
+|-------------|------------------|-----------|
+| **users** | `email` | Validate login credentials instantly using email. |
+| **roles** | `name` | Quickly verify role type (Job Seeker, Employer, Admin). |
+| **user_roles** | (`user_id`, `role_id`)| Retrieve roles assigned to a specific user. |
+| **companies** | `name` | Find a company while posting or managing jobs. |
+| **jobs** | (`created_by`, `title`, `company_id`)| Display jobs filtered by title or company. |
+| **applications** | (`job_id`, `job_seeker_id`)| Check if a job seeker has already applied to a job. |
