@@ -25,7 +25,7 @@ feature branches → develop → main
 - Minimum coverage target: **80%+**
 
 ### What happens in CI?
-When code is pushed to `feature/deploy` or triggered manually:
+When code is pushed or workflow triggered manually:
 
 1. Install dependencies  
 2. Run all backend tests  
@@ -36,7 +36,7 @@ When code is pushed to `feature/deploy` or triggered manually:
 ## 3. Security Scanning (SAST + DAST)
 
 ### SAST
-We use **Trivy** to scan project source code.
+**Trivy** is used to scan project source code.
 
 - Scans for vulnerabilities in Node.js dependencies
 - Runs before deployment
@@ -49,9 +49,8 @@ We use **Trivy** to scan project source code.
 ---
 
 ### DAST (Dynamic Analysis)
-For dynamic security, we use **OWASP ZAP**.
+For dynamic security, **OWASP ZAP** is used.
 
-- Scans running backend API for vulnerabilities
 - Checks for SQL injection, XSS, weak headers, etc.
 - Reports can be exported and reviewed
 
@@ -66,7 +65,7 @@ This section explains how the backend is automatically tested, scanned, and depl
 
 ### Workflow Overview
 
-When code is pushed to the `feature/deploy` branch or the workflow is run manually:
+When code is pushed or the workflow is run manually:
 
 1. **Checkout Code**  
    Fetches the latest backend source code from GitHub.
@@ -78,7 +77,7 @@ When code is pushed to the `feature/deploy` branch or the workflow is run manual
    Sets up Node.js and installs required packages.
 
 4. **Run Tests**  
-   Jest tests are executed to ensure backend stability.
+   Tests are executed to ensure backend stability.
 
 5. **Deploy to EC2 (SSH)**  
    Uses `appleboy/ssh-action` to:  
