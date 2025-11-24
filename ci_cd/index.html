@@ -923,7 +923,7 @@
 <li>Minimum coverage target: <strong>80%+</strong></li>
 </ul>
 <h3 id="what-happens-in-ci">What happens in CI?</h3>
-<p>When code is pushed to <code>feature/deploy</code> or triggered manually:</p>
+<p>When code is pushed or workflow triggered manually:</p>
 <ol>
 <li>Install dependencies  </li>
 <li>Run all backend tests  </li>
@@ -932,7 +932,7 @@
 <hr />
 <h2 id="3-security-scanning-sast-dast">3. Security Scanning (SAST + DAST)</h2>
 <h3 id="sast">SAST</h3>
-<p>We use <strong>Trivy</strong> to scan project source code.</p>
+<p><strong>Trivy</strong> is used to scan project source code.</p>
 <ul>
 <li>Scans for vulnerabilities in Node.js dependencies</li>
 <li>Runs before deployment</li>
@@ -943,9 +943,8 @@
 <img alt="trivy-backend" src="../assets/trivybk.png" /></p>
 <hr />
 <h3 id="dast-dynamic-analysis">DAST (Dynamic Analysis)</h3>
-<p>For dynamic security, we use <strong>OWASP ZAP</strong>.</p>
+<p>For dynamic security, <strong>OWASP ZAP</strong> is used.</p>
 <ul>
-<li>Scans running backend API for vulnerabilities</li>
 <li>Checks for SQL injection, XSS, weak headers, etc.</li>
 <li>Reports can be exported and reviewed</li>
 </ul>
@@ -955,7 +954,7 @@
 <h2 id="4-cicd-workflow-and-deployment-flow">4. CI/CD Workflow and Deployment Flow</h2>
 <p>This section explains how the backend is automatically tested, scanned, and deployed to the EC2 server using GitHub Actions.</p>
 <h3 id="workflow-overview">Workflow Overview</h3>
-<p>When code is pushed to the <code>feature/deploy</code> branch or the workflow is run manually:</p>
+<p>When code is pushed or the workflow is run manually:</p>
 <ol>
 <li>
 <p><strong>Checkout Code</strong><br />
@@ -971,7 +970,7 @@
 </li>
 <li>
 <p><strong>Run Tests</strong><br />
-   Jest tests are executed to ensure backend stability.</p>
+   Tests are executed to ensure backend stability.</p>
 </li>
 <li>
 <p><strong>Deploy to EC2 (SSH)</strong><br />
