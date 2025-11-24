@@ -23,6 +23,7 @@ nav:
       - Data Flow Diagram: data_flow.md
       - Authentication & Authorization Flow: auth_flow.md
       - Unit Test Plan: test_plan.md
+      - CI/CD Pipeline: ci_cd.md
 
 plugins:
   - mermaid2
